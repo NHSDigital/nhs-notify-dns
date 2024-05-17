@@ -1,18 +1,27 @@
 # NHS Notify DNS
 
-[![CI/CD Pull Request](https://github.com/nhs-england-tools/repository-template/actions/workflows/cicd-1-pull-request.yaml/badge.svg)](https://github.com/nhs-england-tools/repository-template/actions/workflows/cicd-1-pull-request.yaml)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=repository-template&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=repository-template)
+NHS Notify DNS Zones.
 
-Start with an overview or a brief description of what the project is about and what it does. For example -
+Variables:
+- parent domain eg nhsnotify.abc.com
+- EnvType
+- EnvName
+- Destinations:
+  - eg 192.168.1.1
 
-Welcome to our repository template designed to streamline your project setup! This robust template provides a reliable starting point for your new projects, covering an essential tech stack and encouraging best practices in documenting.
+EG when deployed:
+- parent domain nhsnotify.abc.co,m
+- envType: prod
+- envname: prod1
+- billingDnsZone: 192.168.1.1
 
-This repository template aims to foster a user-friendly development environment by ensuring that every included file is concise and adequately self-documented. By adhering to this standard, we can promote increased clarity and maintainability throughout your project's lifecycle. Bundled within this template are resources that pave the way for seamless repository creation. Currently supported technologies are:
+DNS record would be:
 
-- Terraform
-- Docker
+billing.prod1.prod.nhsnotify.abc.com => NS => 192.168.1.1
 
-Make use of this repository template to expedite your project setup and enhance your productivity right from the get-go. Enjoy the advantage of having a well-structured, self-documented project that reduces overhead and increases focus on what truly matters - coding!
+Format:
+
+[NotifyDomainBoundary].[EnvName].[EnvType].[ParentDomain]
 
 ## Table of Contents
 
