@@ -67,13 +67,13 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v3
         with:
-          role-to-assume: ${{ env.AWS_DEPLOY_ROLE }}
-          role-session-name: deploy
-          aws-region: ${{ env.AWS_REGION }}
+          role-to-assume: ${{ secrets.AWS_DEPLOY_ROLE }}
+          role-session-name: deploy_${{ env.environment }}
+          aws-region: ${{ vars.AWS_REGION }}
 
       - name: List S3 buckets
         run: |
-          echo "Deploying to ${AWS_REGION} using ${AWS_DEPLOY_ROLE}"
+          echo "Deploying to ${environment}"
           echo "TODO Run terraform here"
   # TODO: More jobs or/and steps here
   # success:
