@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       tag:
-        description: "This is the tag that is oging to be deployed"
+        description: "This is the tag that is going to be deployed"
         required: true
         default: "latest"
 
@@ -55,8 +55,20 @@ jobs:
     needs: [metadata]
     timeout-minutes: 10
     steps:
-      - name: "Checkout code"
+      - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v3
+        with:
+          role-to-assume: ${{ env.AWS_DEPLOY_ROLE }}
+          role-session-name: deploy
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: List S3 buckets
+        run: |
+          echo "Deploying to ${AWS_REGION} using ${AWS_DEPLOY_ROLE}"
+          echo "TODO Run terraform here"
   # TODO: More jobs or/and steps here
   # success:
   #   name: "Success notification"
