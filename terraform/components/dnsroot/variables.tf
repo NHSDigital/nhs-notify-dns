@@ -53,6 +53,6 @@ variable "default_tags" {
 ##
 
 variable "root_domain_name" {
-  type = string
+  type        = string
   description = "The root-level domain name to create a zone for onward delegation of subdomains to other services"
 }
