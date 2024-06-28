@@ -19,6 +19,7 @@ All of the Terraform code lives under the `terraform` directory and is using [tf
 
 Example Terraform plan:
 `bin/terraform.sh -p nhs-notify -r eu-west-2 -e dev -c dnsroot -a plan`
+
 * Project is `nhs-notify`
 * AWS region is `eu-west-2`
 * Environment is `dev`
