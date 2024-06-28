@@ -1,0 +1,3 @@
+README for 'dnsroot' component - DNS project root and subdomain delegation
+
+This component creates the Route53 zone for the specified project root domain `root_domain_name`,  and creates NS records to delegate subdomains as per `dns_subdomains` map.
