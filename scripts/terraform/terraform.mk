@@ -44,7 +44,7 @@ _terraform: # Terraform command wrapper - mandatory: cmd=[command to execute]; o
 	# 'TERRAFORM_STACK' is passed to the functions as environment variable
 	TERRAFORM_STACK=$(or ${TERRAFORM_STACK}, $(or ${terraform_stack}, $(or ${STACK}, $(or ${stack}, scripts/terraform/examples/terraform-state-aws-s3))))
 	dir=$(or ${dir}, ${TERRAFORM_STACK})
-	source scripts/terraform/terraform.lib.sh
+	. "scripts/terraform/terraform.lib.sh"; \
 	terraform-${cmd} # 'dir' and 'opts' are accessible by the function as environment variables, if set
 
 # ==============================================================================
@@ -68,7 +68,7 @@ terraform-example-destroy-aws-infrastructure: # Destroy example of AWS infrastru
 
 terraform-example-clean: # Remove Terraform example files @ExamplesAndTests
 	dir=$(or ${dir}, ${TERRAFORM_STACK})
-	source scripts/terraform/terraform.lib.sh
+	. "scripts/terraform/terraform.lib.sh"; \
 	terraform-clean
 	rm -f ${TERRAFORM_STACK}/.terraform.lock.hcl
 
