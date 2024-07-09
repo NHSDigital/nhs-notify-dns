@@ -1,9 +1,15 @@
-# Guide: Run Git hooks on commit
+---
+layout: default
+title:  Run Git hooks on commit
+parent: User Guides
+---
+
+## Guide: Run Git hooks on commit
 
 - [Guide: Run Git hooks on commit](#guide-run-git-hooks-on-commit)
-  - [Overview](#overview)
-  - [Key files](#key-files)
-  - [Testing](#testing)
+- [Overview](#overview)
+- [Key files](#key-files)
+- [Testing](#testing)
 
 ## Overview
 

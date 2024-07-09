@@ -1,0 +1,1 @@
+This module facilitates delegation of DNS subdomains in Route53 to specified nameservers.

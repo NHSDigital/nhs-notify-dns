@@ -1,4 +1,12 @@
-# ADR-XXX: Agree CI/CD pipeline structure
+---
+layout: default
+title: ADR-001
+parent: ADRs
+description: Use git hook and GitHub Action to check the .editorconfig compliance
+summary: Use git hook and GitHub Action to check the .editorconfig compliance
+---
+
+## ADR-XXX: Agree CI/CD pipeline structure
 
 >|              | |
 >| ------------ | --- |
@@ -11,18 +19,18 @@
 ---
 
 - [ADR-XXX: Agree CI/CD pipeline structure](#adr-xxx-agree-cicd-pipeline-structure)
-  - [Context](#context)
-  - [Decision](#decision)
-    - [Assumptions](#assumptions)
-    - [Drivers](#drivers)
-    - [Options](#options)
-    - [Outcome](#outcome)
-    - [Rationale](#rationale)
-  - [Consequences](#consequences)
-  - [Compliance](#compliance)
-  - [Notes](#notes)
-  - [Actions](#actions)
-  - [Tags](#tags)
+- [Context](#context)
+- [Decision](#decision)
+  - [Assumptions](#assumptions)
+  - [Drivers](#drivers)
+  - [Options](#options)
+  - [Outcome](#outcome)
+  - [Rationale](#rationale)
+- [Consequences](#consequences)
+- [Compliance](#compliance)
+- [Notes](#notes)
+- [Actions](#actions)
+- [Tags](#tags)
 
 ## Context
 
