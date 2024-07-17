@@ -11,3 +11,27 @@ resource "aws_cloudwatch_log_resource_policy" "route53_query_logging_policy" {
   policy_document = data.aws_iam_policy_document.route53_logs.json
   policy_name     = "${local.csi}-route53-query-logging-policy"
 }
+
+data "aws_iam_policy_document" "route53_logs" {
+  statement {
+    effect = "Allow"
+
+    principals {
+      type = "Service"
+
+      identifiers = [
+        "route53.amazonaws.com"
+      ]
+    }
+
+    actions = [
+      "logs:CreateLogStream",
+      "logs:PutLogEvents",
+    ]
+
+    resources = [
+      aws_cloudwatch_log_group.aws_route53_query_log.arn,
+      "${aws_cloudwatch_log_group.aws_route53_query_log.arn}:*"
+    ]
+  }
+}
