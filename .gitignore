@@ -6,6 +6,8 @@
 *vulnerabilities*report*.json
 *report*json.zip
 .version
+*.rej
+*.porig
 
 *.code-workspace
 !project.code-workspace
