@@ -52,7 +52,22 @@ variable "default_tags" {
 # Variables specific to the "dnsroot"component
 ##
 
+variable "log_retention_in_days" {
+  type        = number
+  description = "The retention period in days for the Cloudwatch Logs events to be retained, default of 0 is indefinite"
+  default     = 0
+}
+
 variable "root_domain_name" {
   type        = string
   description = "The root-level domain name to create a zone for onward delegation of subdomains to other services"
+}
+
+variable "delegated_dns_zones" {
+  type = list(object({
+          subdomain = string,
+          ns_records = list(string),
+        }))
+  description = "An object representing DNS zone delegation nameservers"
+  default = []
 }
