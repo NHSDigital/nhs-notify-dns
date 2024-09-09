@@ -16,16 +16,18 @@ jobs:
 
     steps:
     - name: Check out the repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Check out external repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
-        repository: nhsdigital/nhs-notify-repository-template
+        repository: NHSDigital/nhs-notify-repository-template
         path: nhs-notify-repository-template
+        token: ${{ github.token }}
 
     - name: Run syncronisation script
       run: |
+        ls -la nhs-notify-repository-template/
         ./scripts/githooks/sync-template-repo.sh
 
     - name: Create Pull Request
