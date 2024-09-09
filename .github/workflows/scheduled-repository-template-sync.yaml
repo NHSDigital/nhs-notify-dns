@@ -27,6 +27,7 @@ jobs:
 
     - name: Run syncronisation script
       run: |
+        set -x
         ls -la nhs-notify-repository-template/
         ./scripts/githooks/sync-template-repo.sh
 
