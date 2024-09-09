@@ -27,11 +27,10 @@ jobs:
 
     - name: Run syncronisation script
       run: |
-        set -x
-        ls -la nhs-notify-repository-template/
         ./scripts/githooks/sync-template-repo.sh
 
     - name: Create Pull Request
+      if: ${{ !env.ACT }}
       uses: peter-evans/create-pull-request@v7.0.1
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
@@ -43,15 +42,12 @@ jobs:
           # Resultant drift from repository template
 
           ## Who should respond to this PR?
-          The team which owns the responsibility for the services the repository maintains
+          The team which owns the responsibility for this component repository. You may want to consult other contributors.
 
           ## How to progress this PR
-          The repositories guardians should review the contents of the PR and decide
-          how to proceed, you may wish to back-out certain changes or accept them from the upstream
-          `nhsdigital/nhs-notify-repository-template` repository.
+          The repositories guardians should review the contents of the PR and decide how to proceed, you may wish to back-out certain changes or accept them from the upstream `nhsdigital/nhs-notify-repository-template` repository.
 
-          If there are changes you do not wish to see again, it is recommended you add exclusions to
-          `scripts/config/.repository-template-sync-ignore`
+          If there are changes you do not wish to see again, it is recommended you add exclusions to `scripts/config/.repository-template-sync-ignore`.
         labels: |
           template
           automation

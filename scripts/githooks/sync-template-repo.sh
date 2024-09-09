@@ -49,7 +49,7 @@ is_ignored() {
   fi
 
   for ignored in "${IGNORED_PATHS[@]}"; do
-    if [[ "$file" =~ $ignored ]]; then
+    if [[ -n "$ignored" && "$file" =~ $ignored ]]; then
       return 0
     fi
   done
