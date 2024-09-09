@@ -35,7 +35,6 @@ if [ ! -f "${IGNORE_FILE}" ]; then
 fi
 
 # Read the .template-ignore file into an array
-# readarray -t IGNORED_PATHS < "${IGNORE_FILE}"
 while IFS= read -r line || [ -n "$line" ]; do
   IGNORED_PATHS+=("$line")
 done < "$IGNORE_FILE"
@@ -68,7 +67,7 @@ while IFS= read -r -d '' file; do
 
   # Check if the file is ignored
   if is_ignored "$relative_path"; then
-    # echo "Ignoring $relative_path"
+    echo "Ignoring $relative_path"
     continue
   fi
 
@@ -79,15 +78,15 @@ while IFS= read -r -d '' file; do
   if [ ! -f "$target_path" ] && [ "$changes_only" == false ]; then
     echo "Copying $relative_path to the repository"
     FILES_ADDED+=("${relative_path}")
-    # cp "$file" "$target_path"
+    cp "$file" "$target_path"
 
   else
     # If the file exists, check if it's different
     if [ "$new_only" == false ]; then
       if ! diff -q "$file" "$target_path" > /dev/null 2>&1; then
-        # echo "Merging changes from $relative_path"
+        echo "Merging changes from $relative_path"
         FILES_WITH_CHANGES+=("${relative_path}")
-        # cp "$file" "$target_path"
+        cp "$file" "$target_path"
       fi
     fi
   fi
