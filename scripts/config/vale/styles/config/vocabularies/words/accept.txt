@@ -13,6 +13,7 @@ GitHub
 Gitleaks
 Grype
 idempotence
+Jira
 OAuth
 Octokit
 onboarding

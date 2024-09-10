@@ -2,6 +2,7 @@
 scripts/config/.repository-template-sync-ignore
 .github/workflows/
 nhs-notify-repository-template/
+*/examples/
 
 # Files and Folders in this repository to ignore
 .vscode/
@@ -13,6 +14,6 @@ VERSION
 # Files and Folders in the template repository to disregard
 .devcontainer/
 .github/workflows/cicd-*.yaml
-*/examples/
 docs/
 infrastructure/terraform/components/
+scripts/config/vale/styles/config/vocabularies/words/
