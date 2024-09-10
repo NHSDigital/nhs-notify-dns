@@ -1,14 +1,14 @@
 [A-Z]+s
 Bitwarden
 bot
-Cognito
+config
 Cyber
 Dependabot
 draw.io
 drawio
-endcapture
 endfor
 endraw
+env
 GitHub
 Gitleaks
 Grype
@@ -19,8 +19,6 @@ Octokit
 onboarding
 Podman
 Python
-rawContent
-sed
 Syft
 Terraform
 toolchain
