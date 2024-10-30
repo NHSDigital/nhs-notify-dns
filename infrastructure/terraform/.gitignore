@@ -2,6 +2,7 @@
 
 # Transient backends
 components/**/backend_tfscaffold.tf
+bootstrap
 
 # Compiled files
 **/*.tfstate
