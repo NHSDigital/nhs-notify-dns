@@ -24,10 +24,11 @@ jobs:
       matrix:
         component: [dnsroot]
 
-    uses: ./.github/workflows/trigger_internal_repo_build.yaml
+    uses: ./.github/workflows/reusable_internal_repo_build.yaml
     secrets: inherit
     with:
       release_version: main
+      target_workflow: "dispatch-deploy-static-notify-dns-env.yaml"
       tf_environment: "main"
       tf_group: "nhs-notify-dns-dev"
       tf_component: ${{ matrix.component }}
