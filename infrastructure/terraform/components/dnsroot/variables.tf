@@ -71,3 +71,9 @@ variable "delegated_dns_zones" {
   description = "An object representing DNS zone delegation nameservers"
   default = []
 }
+
+variable "cms_cname" {
+  type        = string
+  description = "The CNAME to be used for Web CMS static site"
+  default = "webcms"
+}
