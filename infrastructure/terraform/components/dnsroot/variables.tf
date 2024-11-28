@@ -65,15 +65,15 @@ variable "root_domain_name" {
 
 variable "delegated_dns_zones" {
   type = list(object({
-          subdomain = string,
-          ns_records = list(string),
-        }))
+    subdomain  = string,
+    ns_records = list(string),
+  }))
   description = "An object representing DNS zone delegation nameservers"
-  default = []
+  default     = []
 }
 
 variable "cms_cname" {
   type        = string
   description = "The CNAME to be used for Web CMS static site"
-  default = "webcms"
+  default     = "webcms"
 }

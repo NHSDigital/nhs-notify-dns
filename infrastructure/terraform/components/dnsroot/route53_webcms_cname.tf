@@ -4,5 +4,5 @@ resource "aws_route53_record" "cms_cname" {
   type    = "CNAME"
   ttl     = 5
 
-  records        = ["nhsdigital.github.io"]
+  records = ["nhsdigital.github.io"]
 }
