@@ -59,7 +59,7 @@ terraform-sec: # TFSEC check against Terraform files - optional: terraform_dir|d
 	tfsec infrastructure/terraform \
 		--force-all-dirs \
 		--exclude-downloaded-modules \
-		--config-file scripts/config/tfsec.yml
+		--config-file scripts/config/tfsec.yaml
 
 # ==============================================================================
 # Module tests and examples - please DO NOT edit this section!
