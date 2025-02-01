@@ -6,12 +6,8 @@
 *vulnerabilities*report*.json
 *report*json.zip
 .version
-*.rej
-*.porig
-
+version.json
 *.code-workspace
 !project.code-workspace
 
 # Please, add your custom content below!
-
-!nhs-notify-dns.code-workspace
