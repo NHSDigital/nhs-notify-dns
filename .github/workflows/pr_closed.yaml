@@ -17,7 +17,7 @@ jobs:
     outputs:
       deploy: ${{ steps.check.outputs.deploy }}
     steps:
-      - name: Check if PR was merged or wor§kflow is triggered by workflow_dispatch
+      - name: Check if PR was merged or workflow is triggered by workflow_dispatch
         id: check
         run: |
           if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
