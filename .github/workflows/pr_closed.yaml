@@ -1,4 +1,4 @@
-name: PR Merged
+name: PR Closed
 
 on:
   workflow_dispatch:
