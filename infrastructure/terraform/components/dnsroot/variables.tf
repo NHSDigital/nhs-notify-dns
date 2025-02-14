@@ -77,3 +77,8 @@ variable "cms_cname" {
   description = "The CNAME to be used for Web CMS static site"
   default     = "webcms"
 }
+
+variable "observability_account_id" {
+  type        = string
+  description = "The Observability Account ID that needs access"
+}
