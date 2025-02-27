@@ -9,7 +9,7 @@ data "aws_iam_policy_document" "observability_grafana_role_assume_role_policy" {
     effect  = "Allow"
     principals {
       type        = "AWS"
-      identifiers = ["arn:aws:iam::${var.observability_account_id}:role/${local.csi}-grafana-workspace-role"]
+      identifiers = [replace("arn:aws:iam::${var.observability_account_id}:role/${local.csi}-grafana-workspace-role", var.component, "acct")]
     }
   }
 }
