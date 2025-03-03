@@ -3,7 +3,7 @@ GEM
   specs:
     addressable (2.8.6)
       public_suffix (>= 2.0.2, < 6.0)
-    cgi (0.4.1)
+    cgi (0.4.2)
     colorator (1.1.0)
     concurrent-ruby (1.2.3)
     em-websocket (0.5.3)
