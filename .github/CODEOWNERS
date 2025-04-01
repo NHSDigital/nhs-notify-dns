@@ -2,6 +2,9 @@
 
 * @rossbugginsnhs @m-houston @edmundcraske2-nhs @timireland
 
+# Notify platform owners
+/infrastructure/terraform/  @NHSDigital/nhs-notify-platform
+
 # Default protection for codeowners, must be last in file.
 /.github/CODEOWNERS @NHSDigital/nhs-notify-code-owners
 /CODEOWNERS @NHSDigital/nhs-notify-code-owners
