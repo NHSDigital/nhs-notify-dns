@@ -23,10 +23,11 @@ jobs:
 
     uses: ./.github/workflows/reusable_internal_repo_build.yaml
     secrets: inherit
+
     with:
-      release_version: ${{ github.event.release.tag_name }}
-      target_workflow: "dispatch-deploy-static-notify-dns-env.yaml"
-      tf_environment: "main"
-      tf_group: "nhs-notify-dns-nonprod"
-      tf_component: ${{ matrix.component }}
-      tf_action: "apply"
+      releaseVersion: ${{ github.event.release.tag_name }}
+      targetWorkflow: "dispatch-deploy-static-notify-dns-env.yaml"
+      targetEnvironment: "main"
+      targetAccountGroup: "nhs-notify-dns-nonprod"
+      targetComponent: ${{ matrix.component }}
+      terraformAction: "apply"
