@@ -39,7 +39,6 @@ EXCLUDED_DIRS=(
   ".venv/"
   "docs/"
   "node_modules/"
-  ".vscode/"
 )
 
 
