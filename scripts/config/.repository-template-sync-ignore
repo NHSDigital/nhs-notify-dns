@@ -14,8 +14,9 @@ CHANGELOG.md
 project.code-workspace
 README.md
 scripts/config/sonar-scanner.properties
-VERSION
 scripts/terraform/terraform.mk
+scripts/tests/unit.sh
+VERSION
 
 # Files and Folders in the template repository to disregard
 .devcontainer/
