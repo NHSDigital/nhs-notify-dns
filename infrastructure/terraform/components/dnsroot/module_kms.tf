@@ -52,7 +52,7 @@ data "aws_iam_policy_document" "kms" {
     }
   }
   statement {
-    sid    = "AllowCloudWatchEncrypt"
+    sid    = "AllowSNSEncrypt"
     effect = "Allow"
 
     principals {
