@@ -59,7 +59,7 @@ data "aws_iam_policy_document" "kms" {
       type = "Service"
 
       identifiers = [
-        "sns.${var.region}.amazonaws.com"
+        "sns.amazonaws.com"
       ]
     }
 
