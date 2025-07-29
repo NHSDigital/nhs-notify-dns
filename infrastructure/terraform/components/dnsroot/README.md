@@ -29,7 +29,9 @@
 | <a name="input_root_domain_name"></a> [root\_domain\_name](#input\_root\_domain\_name) | The root-level domain name to create a zone for onward delegation of subdomains to other services | `string` | n/a | yes |
 ## Modules
 
-No modules.
+| Name | Source | Version |
+|------|--------|---------|
+| <a name="module_kms"></a> [kms](#module\_kms) | git::https://github.com/NHSDigital/nhs-notify-shared-modules.git//infrastructure/modules/kms | v1.0.9 |
 ## Outputs
 
 No outputs.
