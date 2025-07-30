@@ -1,7 +1,10 @@
 # This file is for you! Please, updated to the versions agreed by your team.
-
-pre-commit 3.6.0
+act 0.2.64
 gitleaks 8.15.3
+jq 1.6
+nodejs 22.11.0
+pre-commit 3.6.0
+python 3.13.2
 terraform 1.10.1
 terraform-docs 0.19.0
 trivy 0.61.0

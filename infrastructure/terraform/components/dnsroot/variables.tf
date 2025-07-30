@@ -82,3 +82,26 @@ variable "observability_account_id" {
   type        = string
   description = "The Observability Account ID that needs access"
 }
+
+variable "cost_alarm_recipients" {
+  type        = list(string)
+  description = "A list of email addresses to receive alarm notifications"
+  default     = []
+}
+
+variable "budget_amount" {
+  type        = number
+  description = "The budget amount in USD for the account"
+  default     = 500
+}
+
+variable "cost_anomaly_threshold" {
+  type        = number
+  description = "The threshold percentage for cost anomaly detection"
+  default     = 10
+}
+
+variable "kms_deletion_window" {
+  type        = string
+  description = "KMS key deletion window"
+}
