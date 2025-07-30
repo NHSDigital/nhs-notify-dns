@@ -100,3 +100,8 @@ variable "cost_anomaly_threshold" {
   description = "The threshold percentage for cost anomaly detection"
   default     = 10
 }
+
+variable "kms_deletion_window" {
+  type        = string
+  description = "KMS key deletion window"
+}
