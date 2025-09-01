@@ -21,13 +21,19 @@ jobs:
       matrix:
         component: [dnsroot]
 
-    uses: ./.github/workflows/reusable_internal_repo_build.yaml
-    secrets: inherit
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5.0.0
 
-    with:
-      releaseVersion: ${{ github.event.release.tag_name }}
-      targetWorkflow: "dispatch-deploy-static-notify-dns-env.yaml"
-      targetEnvironment: "main"
-      targetAccountGroup: "nhs-notify-dns-nonprod"
-      targetComponent: ${{ matrix.component }}
-      terraformAction: "apply"
+      - name: Updating Main Environment
+        secrets: inherit
+        env:
+          PR_TRIGGER_PAT: ${{ secrets.PR_TRIGGER_PAT }}
+        run: |
+          bash .github/scripts/dispatch_internal_repo_workflow.sh \
+            --releaseVersion "${{ github.event.release.tag_name }}" \
+            --targetWorkflow "dispatch-deploy-static-notify-dns-env.yaml" \
+            --targetEnvironment "main" \
+            --targetAccountGroup "nhs-notify-dns-nonprod" \
+            --targetComponent "${{ matrix.component }}" \
+            --terraformAction "apply"
