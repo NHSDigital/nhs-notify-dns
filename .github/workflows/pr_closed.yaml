@@ -38,7 +38,7 @@ jobs:
     needs: check-merge-or-workflow-dispatch
     name: Deploy changes to main in dev AWS account
     runs-on: ubuntu-latest
-    if: needs.check-merge-or-workflow-dispatch.outputs.deploy == 'true'
+    if: needs.check-merge-or-workflow-dispatch.outputs.deploy == 'false'
 
     permissions:
       id-token: write
