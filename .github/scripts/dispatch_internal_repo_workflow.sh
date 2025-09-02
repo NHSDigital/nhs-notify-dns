@@ -150,6 +150,15 @@ echo "[INFO] Triggering workflow '$targetWorkflow' in nhs-notify-internal..."
 echo "Dispatch event payload:"
 echo "$DISPATCH_EVENT" | jq .
 
+curl -v -L \
+  --fail \
+  -X POST \
+  -H "Accept: application/vnd.github+json" \
+  -H "Authorization: Bearer ${PR_TRIGGER_PAT}" \
+  -H "X-GitHub-Api-Version: 2022-11-28" \
+  "https://api.github.com/repos/NHSDigital/nhs-notify-internal/actions/workflows/$targetWorkflow/dispatches" \
+  -d "$DISPATCH_EVENT"
+
 trigger_response=$(curl -v -L \
   --fail \
   -X POST \
