@@ -43,6 +43,7 @@ jobs:
     permissions:
       id-token: write
       contents: read
+      actions: write
 
     strategy:
       max-parallel: 1
