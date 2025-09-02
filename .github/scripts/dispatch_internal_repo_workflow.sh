@@ -150,7 +150,7 @@ echo "[INFO] Triggering workflow '$targetWorkflow' in nhs-notify-internal..."
 echo "Dispatch event payload:"
 echo "$DISPATCH_EVENT" | jq .
 
-trigger_response=$(curl -L \
+trigger_response=$(curl -v -L \
   --fail \
   -X POST \
   -H "Accept: application/vnd.github+json" \
