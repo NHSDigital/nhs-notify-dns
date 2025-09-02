@@ -2,10 +2,13 @@ name: PR Closed
 
 on:
   workflow_dispatch:
-  pull_request:
-    types: [closed]
+  # pull_request:
+  #   types: [closed]
+  #   branches:
+  #     - main
+  push:
     branches:
-      - main
+      - CCM-11942_WorkflowFixesForPRWaiting_fixes
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
