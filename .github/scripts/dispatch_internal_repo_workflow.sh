@@ -132,7 +132,6 @@ DISPATCH_EVENT=$(jq -ncM \
     "inputs": (
       (if $infraRepoName != "" then { "infraRepoName": $infraRepoName } else {} end) +
       (if $terraformAction != "" then { "terraformAction": $terraformAction } else {} end) +
-      (if $overrides != "" then { "overrides": $overrides } else {} end) +
       (if $overrideProjectName != "" then { "overrideProjectName": $overrideProjectName } else {} end) +
       (if $overrideRoleName != "" then { "overrideRoleName": $overrideRoleName } else {} end) +
       (if $targetProject != "" then { "targetProject": $targetProject } else {} end) +
@@ -141,6 +140,7 @@ DISPATCH_EVENT=$(jq -ncM \
         "targetEnvironment": $targetEnvironment,
         "targetAccountGroup": $targetAccountGroup,
         "targetComponent": $targetComponent,
+        "overrides": $overrides,
       }
     )
   }')
@@ -154,7 +154,7 @@ curl -v -L \
   --fail \
   -X POST \
   -H "Accept: application/vnd.github+json" \
-  -H "Authorization: Bearer ${PR_TRIGGER_PAT}" \
+  -H "Authorization: token ${PR_TRIGGER_PAT}" \
   -H "X-GitHub-Api-Version: 2022-11-28" \
   "https://api.github.com/repos/NHSDigital/nhs-notify-internal/actions/workflows/$targetWorkflow/dispatches" \
   -d "$DISPATCH_EVENT"
