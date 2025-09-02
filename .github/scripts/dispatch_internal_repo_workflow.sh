@@ -132,6 +132,7 @@ DISPATCH_EVENT=$(jq -ncM \
     "inputs": (
       (if $infraRepoName != "" then { "infraRepoName": $infraRepoName } else {} end) +
       (if $terraformAction != "" then { "terraformAction": $terraformAction } else {} end) +
+      (if $overrides != "" then { "overrides": $overrides } else {} end) +
       (if $overrideProjectName != "" then { "overrideProjectName": $overrideProjectName } else {} end) +
       (if $overrideRoleName != "" then { "overrideRoleName": $overrideRoleName } else {} end) +
       (if $targetProject != "" then { "targetProject": $targetProject } else {} end) +
@@ -140,7 +141,6 @@ DISPATCH_EVENT=$(jq -ncM \
         "targetEnvironment": $targetEnvironment,
         "targetAccountGroup": $targetAccountGroup,
         "targetComponent": $targetComponent,
-        "overrides": $overrides,
       }
     )
   }')
