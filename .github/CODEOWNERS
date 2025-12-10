@@ -5,6 +5,9 @@
 *.code-workspace            @NHSDigital/nhs-notify-dns-admins
 /infrastructure/terraform/  @NHSDigital/nhs-notify-platform
 
+# Root level AGENTS.md owned by platform.
+AGENTS.md                   @NHSDigital/nhs-notify-platform
+
 # Default protection for codeowners, must be last in file.
 /.github/CODEOWNERS         @NHSDigital/nhs-notify-code-owners
 /CODEOWNERS                 @NHSDigital/nhs-notify-code-owners
