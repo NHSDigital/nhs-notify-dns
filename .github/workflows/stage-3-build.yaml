@@ -39,7 +39,7 @@ jobs:
     timeout-minutes: 3
     steps:
       - name: "Checkout code"
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: "Upload artifact"
         uses: actions/upload-artifact@v4
