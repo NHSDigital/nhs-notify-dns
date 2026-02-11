@@ -1,5 +1,5 @@
 resource "aws_sns_topic" "costs" {
-  name              = "${local.csi}-costs"
+  name = "${local.csi}-costs"
 }
 
 resource "aws_sns_topic_policy" "costs" {
