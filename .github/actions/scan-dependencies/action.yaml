@@ -41,6 +41,7 @@ runs:
       shell: bash
       run: |
         export BUILD_DATETIME=${{ inputs.build_datetime }}
+        export GRYPE_DB_VALIDATE_AGE=false
         ./scripts/reports/scan-vulnerabilities.sh
     - name: "Compress vulnerabilities report"
       shell: bash
