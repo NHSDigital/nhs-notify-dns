@@ -9,7 +9,7 @@ runs:
   steps:
     - name: Checkout
       uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
-    - uses: actions/setup-node@v4
+    - uses: actions/setup-node@49933ea5288caeca8642c6c9ffb5f6f68d45ab38 # v4
       with:
         node-version: 18
     - name: Npm cli install
@@ -17,7 +17,8 @@ runs:
       run: npm ci
       shell: bash
     - name: Setup Ruby
-      uses: ruby/setup-ruby@3783f195e29b74ae398d7caca108814bbafde90e # v1.180.1      with:
+      uses: ruby/setup-ruby@3783f195e29b74ae398d7caca108814bbafde90e # v1.180.1
+      with:
         ruby-version: "3.2" # Not needed with a .ruby-version file
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
         cache-version: 0 # Increment this number if you need to re-download cached gems
