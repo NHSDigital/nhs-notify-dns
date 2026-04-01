@@ -13,14 +13,8 @@ repos:
       - id: mixed-line-ending
       - id: pretty-format-json
         args: ['--autofix']
-        exclude: |
-          (?x)^(
-            .*/?package-lock\.json |
-            \.vscode/.*\.json |
-            \.devcontainer/.*\.json |
-            docs/\.vscode/.*\.json |
-            docs/adr/assets/ADR-003/.*\.json
-          )$
+        exclude: '(^|/)package(-lock)?\.json$'
+    # -   id: ...
   - repo: local
     hooks:
       - id: sort-dictionary
