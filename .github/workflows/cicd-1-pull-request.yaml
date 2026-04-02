@@ -29,7 +29,7 @@ jobs:
       #skip_trivy_package: ${{ steps.skip_trivy.outputs.skip_trivy_package }}
     steps:
       - name: "Checkout code"
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
       - name: "Set CI/CD variables"
         id: variables
         run: |
@@ -106,7 +106,6 @@ jobs:
       build_epoch: "${{ needs.metadata.outputs.build_epoch }}"
       nodejs_version: "${{ needs.metadata.outputs.nodejs_version }}"
       python_version: "${{ needs.metadata.outputs.python_version }}"
-      skip_trivy_package: ${{ needs.metadata.outputs.skip_trivy_package == 'true' }}
       terraform_version: "${{ needs.metadata.outputs.terraform_version }}"
       version: "${{ needs.metadata.outputs.version }}"
     secrets: inherit
