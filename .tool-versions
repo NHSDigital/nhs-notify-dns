@@ -1,3 +1,4 @@
+# trivy 0.69.3 - TODO - Re-visit Trivy usage https://nhsd-jira.digital.nhs.uk/browse/CCM-15549
 # This file is for you! Please, updated to the versions agreed by your team.
 act 0.2.64
 gitleaks 8.15.3
